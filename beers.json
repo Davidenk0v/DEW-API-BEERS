@@ -1,0 +1,282 @@
+[
+    {
+        "id": 1,
+        "name": "Alhambra Reserva 1925",
+        "type": "Lager",
+        "graduacion_alcoholica": 6.4,
+        "descripcion": "Cerveza lager de gran cuerpo y sabor, con toques de malta y caramelo."
+    },
+    {
+        "id": 2,
+        "name": "Estrella Damm",
+        "type": "Pilsner",
+        "graduacion_alcoholica": 5.4,
+        "descripcion": "Cerveza pilsner refrescante con un equilibrio entre amargor y suavidad."
+    },
+    {
+        "id": 3,
+        "name": "Mahou Cinco Estrellas",
+        "type": "Pale Lager",
+        "graduacion_alcoholica": 5.5,
+        "descripcion": "Cerveza pale lager con cuerpo ligero y notas de malta y lúpulo."
+    },
+    {
+        "id": 4,
+        "name": "San Miguel Selecta XV",
+        "type": "Amber Ale",
+        "graduacion_alcoholica": 6.2,
+        "descripcion": "Cerveza amber ale con carácter maltoso y toques de caramelo y frutas."
+    },
+    {
+        "id": 5,
+        "name": "Damm Inedit",
+        "type": "Witbier",
+        "graduacion_alcoholica": 4.8,
+        "descripcion": "Cerveza witbier elaborada en colaboración con Ferran Adrià, con notas especiadas y cítricas."
+    },
+    {
+        "id": 6,
+        "name": "Moritz Epidor",
+        "type": "Doppelbock",
+        "graduacion_alcoholica": 7.2,
+        "descripcion": "Cerveza doppelbock con cuerpo robusto, maltosa y toques de frutos oscuros."
+    },
+    {
+        "id": 7,
+        "name": "La Virgen Jamonera",
+        "type": "Session IPA",
+        "graduacion_alcoholica": 4.7,
+        "descripcion": "Cerveza session IPA con aromas cítricos y florales, perfecta para disfrutar durante sesiones largas."
+    },
+    {
+        "id": 8,
+        "name": "Naparbier Back in Black",
+        "type": "Black IPA",
+        "graduacion_alcoholica": 6.0,
+        "descripcion": "Cerveza black IPA con equilibrio entre maltas oscuras y lúpulos aromáticos."
+    },
+    {
+        "id": 9,
+        "name": "Cruzcampo Gran Reserva",
+        "type": "Vienna Lager",
+        "graduacion_alcoholica": 6.4,
+        "descripcion": "Cerveza vienna lager con cuerpo medio, maltosa y ligero amargor."
+    },
+    {
+        "id": 10,
+        "name": "Heineken España",
+        "type": "Euro Pale Lager",
+        "graduacion_alcoholica": 5.0,
+        "descripcion": "Cerveza euro pale lager con perfil suave y refrescante."
+    },
+    {
+        "id": 11,
+        "name": "La Sagra Bohío",
+        "type": "Weizenbock",
+        "graduacion_alcoholica": 7.5,
+        "descripcion": "Cerveza weizenbock con notas a plátano y clavo, de cuerpo medio-alto."
+    },
+    {
+        "id": 12,
+        "name": "Victoria Malaga",
+        "type": "Belgian Dubbel",
+        "graduacion_alcoholica": 6.5,
+        "descripcion": "Cerveza belgian dubbel con aromas a frutas oscuras, caramelo y especias."
+    },
+    {
+        "id": 13,
+        "name": "Bidassoa Basque Brewery Akerbeltz",
+        "type": "Russian Imperial Stout",
+        "graduacion_alcoholica": 9.5,
+        "descripcion": "Cerveza russian imperial stout con intensos sabores a café, chocolate y regaliz."
+    },
+    {
+        "id": 14,
+        "name": "Cervesa Guineu Riner",
+        "type": "American Pale Ale",
+        "graduacion_alcoholica": 5.2,
+        "descripcion": "Cerveza american pale ale con lúpulos americanos, notas cítricas y final amargo."
+    },
+    {
+        "id": 15,
+        "name": "Dougalls Happy Otter",
+        "type": "Session IPA",
+        "graduacion_alcoholica": 4.8,
+        "descripcion": "Cerveza session IPA con aromas frutales y cítricos, ideal para sesiones ligeras."
+    },
+    {
+        "id": 16,
+        "name": "La Quince Jack the Ripper",
+        "type": "American IPA",
+        "graduacion_alcoholica": 7.0,
+        "descripcion": "Cerveza american IPA con potentes aromas y sabores a lúpulo."
+    },
+    {
+        "id": 17,
+        "name": "Nomada Hop on Top",
+        "type": "Double IPA",
+        "graduacion_alcoholica": 8.0,
+        "descripcion": "Cerveza double IPA con perfil resinoso y cítrico, intensa en amargor."
+    },
+    {
+        "id": 18,
+        "name": "La Calavera Cardhu",
+        "type": "Scotch Ale",
+        "graduacion_alcoholica": 7.5,
+        "descripcion": "Cerveza scotch ale con maltas tostadas, caramelo y suave dulzura."
+    },
+    {
+        "id": 19,
+        "name": "Birra 08 La Bella Lola",
+        "type": "Blonde Ale",
+        "graduacion_alcoholica": 5.3,
+        "descripcion": "Cerveza blonde ale con equilibrio entre malta y lúpulo, ligera y refrescante."
+    },
+    {
+        "id": 20,
+        "name": "Pirate Brew Koko Black",
+        "type": "Imperial Porter",
+        "graduacion_alcoholica": 8.5,
+        "descripcion": "Cerveza imperial porter con aromas a cacao y coco, cuerpo robusto y dulzura."
+    },
+    {
+        "id": 21,
+        "name": "Soma Perun",
+        "type": "Baltic Porter",
+        "graduacion_alcoholica": 7.0,
+        "descripcion": "Cerveza baltic porter con notas a chocolate, tostado y suave ahumado."
+    },
+    {
+        "id": 22,
+        "name": "Espiga Jumana",
+        "type": "Gose",
+        "graduacion_alcoholica": 4.8,
+        "descripcion": "Cerveza gose con toques salinos y cítricos, refrescante y única."
+    },
+    {
+        "id": 23,
+        "name": "Ballut Sir James",
+        "type": "English Barleywine",
+        "graduacion_alcoholica": 11.0,
+        "descripcion": "Cerveza english barleywine con cuerpo intenso, notas a caramelo y frutas oscuras."
+    },
+    {
+        "id": 24,
+        "name": "As Cervesa Aeri",
+        "type": "Kölsch",
+        "graduacion_alcoholica": 5.0,
+        "descripcion": "Cerveza kölsch de origen gallego, ligera y fácil de beber."
+    },
+    {
+        "id": 25,
+        "name": "Galana Irish Red Ale",
+        "type": "Irish Red Ale",
+        "graduacion_alcoholica": 5.5,
+        "descripcion": "Cerveza irish red ale con maltas tostadas y ligero amargor."
+    },
+    {
+        "id": 26,
+        "name": "Laugar Random Series 61",
+        "type": "Bière de Garde",
+        "graduacion_alcoholica": 7.0,
+        "descripcion": "Cerveza bière de garde con notas a caramelo, especias y frutas maduras."
+    },
+    {
+        "id": 27,
+        "name": "Edge Brewing Padrino Porter",
+        "type": "Robust Porter",
+        "graduacion_alcoholica": 6.0,
+        "descripcion": "Cerveza robust porter con sabores a café, chocolate y maltas tostadas."
+    },
+    {
+        "id": 28,
+        "name": "Pochs Doble Malta",
+        "type": "Doppelbock",
+        "graduacion_alcoholica": 8.0,
+        "descripcion": "Cerveza doppelbock con cuerpo rico y maltoso, con toques de caramelo."
+    },
+    {
+        "id": 29,
+        "name": "La Pirata Lab Imperial Stout",
+        "type": "Imperial Stout",
+        "graduacion_alcoholica": 10.5,
+        "descripcion": "Cerveza imperial stout con intensos sabores a café, chocolate y regaliz."
+    },
+    {
+        "id": 30,
+        "name": "La Axarca Neula",
+        "type": "Spiced Beer",
+        "graduacion_alcoholica": 7.5,
+        "descripcion": "Cerveza spiced beer con toques de especias y vainilla, perfecta para el invierno."
+    },
+    {
+        "id": 31,
+        "name": "Garage Beer Soup",
+        "type": "New England IPA",
+        "graduacion_alcoholica": 6.2,
+        "descripcion": "Cerveza new england IPA con turbidez y explosión de sabores tropicales."
+    },
+    {
+        "id": 32,
+        "name": "Lervig Perler For Svin",
+        "type": "American Pale Ale",
+        "graduacion_alcoholica": 4.7,
+        "descripcion": "Cerveza american pale ale con lúpulos americanos, fresca y fácil de beber."
+    },
+    {
+        "id": 33,
+        "name": "Nomada Omega",
+        "type": "Double IPA",
+        "graduacion_alcoholica": 8.0,
+        "descripcion": "Cerveza double IPA con intensos aromas y sabores a lúpulo, amargor pronunciado."
+    },
+    {
+        "id": 34,
+        "name": "La Pirata Lab Tutti Frutti",
+        "type": "Fruit Beer",
+        "graduacion_alcoholica": 4.5,
+        "descripcion": "Cerveza fruit beer con adición de frutas tropicales, refrescante y aromática."
+    },
+    {
+        "id": 35,
+        "name": "La Calavera Túrbida",
+        "type": "Hazy IPA",
+        "graduacion_alcoholica": 6.5,
+        "descripcion": "Cerveza hazy IPA con turbidez y explosión de aromas a lúpulo y frutas."
+    },
+    {
+        "id": 36,
+        "name": "Basqueland Coco Chango",
+        "type": "Milk Stout",
+        "graduacion_alcoholica": 5.8,
+        "descripcion": "Cerveza milk stout con añadido de coco, suave y sedosa."
+    },
+    {
+        "id": 37,
+        "name": "Bidassoa Basilisk",
+        "type": "Belgian Strong Ale",
+        "graduacion_alcoholica": 9.0,
+        "descripcion": "Cerveza belgian strong ale con cuerpo fuerte, especias y notas a frutas maduras."
+    },
+    {
+        "id": 38,
+        "name": "Cyclic Las Tonas",
+        "type": "Gose",
+        "graduacion_alcoholica": 5.2,
+        "descripcion": "Cerveza gose con toques salinos y frutas tropicales, refrescante y equilibrada."
+    },
+    {
+        "id": 39,
+        "name": "Laugar Aupa Tovarisch!",
+        "type": "Russian Imperial Stout",
+        "graduacion_alcoholica": 11.5,
+        "descripcion": "Cerveza russian imperial stout con potentes sabores a café, chocolate y vainilla."
+    },
+    {
+        "id": 40,
+        "name": "Llúpol Recuerda",
+        "type": "IPA",
+        "graduacion_alcoholica": 6.2,
+        "descripcion": "Cerveza IPA con aromas a lúpulo y frutas tropicales, amargor persistente."
+    }
+]
