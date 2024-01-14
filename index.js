@@ -80,7 +80,11 @@ app.put('/api/beers/:id', (req, res) => {
         let newData = req.body;
         let oldData = filter[0];
         MergeRecursive(oldData, newData);
-        res.status(200).json(oldData);
+        res.status(200).json({
+            success: true,
+            message: 'Cerveza actualizada correctamente',
+            data: newData
+        });
     }
 })
 //DELETE

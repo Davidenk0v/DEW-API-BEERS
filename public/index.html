@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cervezas</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="body">
+    <h1 class="title">Cervezas</h1>
+    <div id="message"></div>
+    <div class="container flex flex-row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form class="form-control">
+            <input type="hidden" id="id">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="Introduce el nombre...">
+            <label for="name">Tipo:</label>
+            <input type="text" id="type" placeholder="Introduce el tipo...">
+            <label for="name">Graduación alcoholica:</label>
+            <input type="text" id="graduacion" placeholder="Introduce graduación alcoholica...">
+            <label for="name">Descripción:</label>
+            <textarea rows="3" cols="30" id="description" placeholder="Descripción"></textarea>
+            <button class="btn btn-success mb-2" onclick="addBeer()">Añadir</button>
+            <button class="btn btn-warning mb-2" onclick="modBeer()">Modificar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
