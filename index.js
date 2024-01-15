@@ -52,24 +52,30 @@ app.get('/api/beers/:id', (req, res) => {
 //POST
 app.post('/api/beers', (req, res) => {
     let newBeer = req.body;
-    if (newBeer.name && newBeer.type) {
-        const BEERS = require('./beers.json');
-        const newId = BEERS.length;
-        newBeer.id = ++newId;
+    if (newBeer.name && newBeer.type && newBeer.descripcion && newBeer.graduacion_alcoholica) {
+        const BEERS = require('./beers.json')
+        const newId = ++BEERS.length;
+        newBeer.id = newId;
         BEERS.push(newBeer);
-        res.status(201).json(newBeer);
+        res.status(201).json({
+            success: true,
+            message: 'Cerveza creada correctamente',
+            data: newBeer
+        });
     } else {
-        res.status(400).json({
+        res.status(422).json({
             success: false,
+            error_code: 5555,
             message: 'Falta el nombre y/o el tipo de cerveza',
             data: newBeer
-        })
+        });
     }
 });
+
 //PUT
 app.put('/api/beers/:id', (req, res) => {
     let id = req.params.id;
-    let filter = BEERS.filter(cliente => cliente.id == id);
+    let filter = BEERS.filter(beer => beer.id == id);
     if (filter.length == 0) {
         res.status(404).json({
             success: false,
@@ -83,7 +89,7 @@ app.put('/api/beers/:id', (req, res) => {
         res.status(200).json({
             success: true,
             message: 'Cerveza actualizada correctamente',
-            data: newData
+            data: oldData
         });
     }
 })

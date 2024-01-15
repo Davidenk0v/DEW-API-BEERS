@@ -8,22 +8,23 @@ const DESCRIPTION = document.getElementById('description');
 const FORM = document.querySelector('form');
 
 const MESSAGE = document.getElementById('message');
-loadTable()
 function loadTable() {
     TABLE.innerHTML = '';
     fetch(URL_API)
         .then(res => res.json())
-        .then(data => {
-            let beers = data.data.beers;
+        .then(json => {
+            let beers = json.data.beers;
+
             beers.forEach(beer => {
+                console.log(beer.name)
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                <td>${beer.name}</td>
-                <td>${beer.type}</td>
-                <td>
-                <button class="btn btn-danger mb-2"  onclick="deleteBeer(${beer.id})">Eliminar</button>
-                <button class="btn btn-primary mb-2"  onclick="showBeer(${beer.id})">Ver</button>
-                </td>
+            <td>${beer.name}</td>
+            <td>${beer.type}</td>
+            <td>
+            <button class="btn btn-danger mb-2"  onclick="deleteBeer(${beer.id})">Eliminar</button>
+            <button class="btn btn-primary mb-2"  onclick="showBeer(${beer.id})">Ver</button>
+            </td>
             `;
                 TABLE.appendChild(row);
             })
@@ -63,54 +64,65 @@ function deleteBeer(id) {
 }
 
 function modBeer() {
-    FORM.addEventListener('submit', (e) => {
-        e.preventDefault();
-    });
     let id = ID_INPUT.value
-    var formdata = new FormData();
-    formdata.append('id', id);
-    formdata.append('name', NAME_INPUT.value)
-    formdata.append('type', TYPE_INPUT.value)
-    formdata.append('graduacion_alcoholica', ALCOHOL_INPUT.value)
-    formdata.append('descripcion', DESCRIPTION.value);
-    var requestOptions = {
-        method: 'PUT',
-        body: formdata,
-        redirect: 'follow'
-    };
-    fetch(URL_API + id, requestOptions)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            loadTable();
-        }).catch(error => {
-            console.log(error)
-        })
-}
-
-function addBeer() {
-    FORM.addEventListener('submit', (e) => {
-        e.preventDefault();
+    let name = NAME_INPUT.value;
+    let type = TYPE_INPUT.value;
+    let graduacion = ALCOHOL_INPUT.value;
+    let description = DESCRIPTION.value;
+    let beer = JSON.stringify({
+        "name": name,
+        "type": type,
+        "descripcion": description,
+        "graduacion_alcoholica": graduacion
     });
-    var formdata = new FormData();
-    formdata.append('name', NAME_INPUT.value)
-    formdata.append('type', TYPE_INPUT.value)
-    formdata.append('graduacion_alcoholica', ALCOHOL_INPUT.value)
-    formdata.append('descripcion', DESCRIPTION.value);
-    console.log(formdata)
-    var requestOptions = {
-        method: 'POST',
-        body: formdata,
-        redirect: 'follow'
-    };
-    fetch(URL_API, requestOptions)
+
+    fetch(URL_API + id, request_options('PUT', beer))
         .then(res => res.json())
-        .then(data => {
-            console.log(data)
+        .then(json => {
             loadTable();
+            MESSAGE.className = 'success'
+            MESSAGE.innerHTML = json.message
         }).catch(error => {
             MESSAGE.className = 'error'
             MESSAGE.innerHTML = error
         })
 }
 
+function addBeer() {
+    let name = NAME_INPUT.value;
+    let type = TYPE_INPUT.value;
+    let graduacion = ALCOHOL_INPUT.value;
+    let description = DESCRIPTION.value;
+    let beer = JSON.stringify({
+        "name": name,
+        "type": type,
+        "descripcion": description,
+        "graduacion_alcoholica": graduacion
+    });
+    fetch(URL_API, request_options('POST', beer))
+        .then(res => res.json())
+        .then(json => {
+            loadTable();
+            MESSAGE.className = 'success'
+            MESSAGE.innerHTML = json.message
+        }).catch(error => {
+            MESSAGE.className = 'error'
+            MESSAGE.innerHTML = error
+        })
+}
+
+
+function request_options(type, data) {
+    const requestOptions = {
+        method: type,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: data,
+        redirect: 'follow'
+    };
+    return requestOptions;
+}
+
+
+loadTable()
