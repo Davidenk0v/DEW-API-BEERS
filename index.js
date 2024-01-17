@@ -37,7 +37,7 @@ app.get('/api/beers/:id', (req, res) => {
     if (filter.length > 0) {
         res.json({
             success: true,
-            message: 'Cliente encontrado con id: ' + id,
+            message: 'Cerveza encontrada con id: ' + id,
             data: filter[0]
         })
     } else {
@@ -52,9 +52,9 @@ app.get('/api/beers/:id', (req, res) => {
 //POST
 app.post('/api/beers', (req, res) => {
     let newBeer = req.body;
-    if (newBeer.name && newBeer.type && newBeer.descripcion && newBeer.graduacion_alcoholica) {
+    if (newBeer != null && newBeer.name && newBeer.type && newBeer.descripcion && newBeer.graduacion_alcoholica) {
         const BEERS = require('./beers.json')
-        const newId = ++BEERS.length;
+        const newId = BEERS.length + 1;
         newBeer.id = newId;
         BEERS.push(newBeer);
         res.status(201).json({

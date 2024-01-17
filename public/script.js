@@ -14,9 +14,7 @@ function loadTable() {
         .then(res => res.json())
         .then(json => {
             let beers = json.data.beers;
-
             beers.forEach(beer => {
-                console.log(beer.name)
                 const row = document.createElement('tr');
                 row.innerHTML = `
             <td>${beer.name}</td>
@@ -102,6 +100,7 @@ function addBeer() {
     fetch(URL_API, request_options('POST', beer))
         .then(res => res.json())
         .then(json => {
+            console.log(json)
             loadTable();
             MESSAGE.className = 'success'
             MESSAGE.innerHTML = json.message
