@@ -5,14 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cervezas</title>
-    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <body class="body">
-    <h1 class="title">Cervezas</h1>
+    <nav class="navbar navbar-light bg-light sticky-sm-top bg-light">
+        <div class="container-fluid ">
+            <h1 class="navbar-brand">Cervezas</h1>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
     <div id="message"></div>
-    <div class="container flex flex-row">
-        <table class="table">
+    <div class="container-fluid">
+        <div class="row g-1">
+            <input type="hidden" id="id">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="col-md-6">
+                <label for="type" class="form-label">Tipo:</label>
+                <input type="text" class="form-control" id="type">
+            </div>
+            <div class="col-md-2">
+                <label for="graduacion" class="form-label">Graduación alcoholica:</label>
+                <input type="text" class="form-control" id="graduacion">
+            </div>
+            <div class="col-12">
+                <label for="description" class="form-label">Descripción:</label>
+                <textarea type="text" class="form-control" id="description"></textarea>
+            </div>
+            <div class=" col-12">
+                <button type="submit" class="btn btn-primary" onclick="addBeer()">Añadir</button>
+                <button type="submit" class="btn btn-warning" onclick="modBeer()">Modificar</button>
+            </div>
+        </div>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -23,19 +56,6 @@
             <tbody>
             </tbody>
         </table>
-        <div class="form-control">
-            <input type="hidden" id="id">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" placeholder="Introduce el nombre...">
-            <label for="name">Tipo:</label>
-            <input type="text" id="type" placeholder="Introduce el tipo...">
-            <label for="name">Graduación alcoholica:</label>
-            <input type="text" id="graduacion" placeholder="Introduce graduación alcoholica...">
-            <label for="name">Descripción:</label>
-            <textarea rows="3" cols="30" id="description" placeholder="Descripción"></textarea>
-            <button class="btn btn-success mb-2" onclick="addBeer()">Añadir</button>
-            <button class="btn btn-warning mb-2" onclick="modBeer()">Modificar</button>
-        </div>
     </div>
 
     <script src="script.js"></script>

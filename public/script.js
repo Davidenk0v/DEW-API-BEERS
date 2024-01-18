@@ -52,11 +52,11 @@ function deleteBeer(id) {
         .then(response => response.json())
         .then(result => {
             loadTable()
-            MESSAGE.className = 'success';
+            MESSAGE.className = 'alert alert-success';
             MESSAGE.innerHTML = result.message;
         }).catch(error => {
             console.log(error);
-            MESSAGE.className = 'error';
+            MESSAGE.className = 'alert alert-danger';
             MESSAGE.innerHTML = error;
         })
 }
@@ -78,10 +78,10 @@ function modBeer() {
         .then(res => res.json())
         .then(json => {
             loadTable();
-            MESSAGE.className = 'success'
+            MESSAGE.className = 'alert alert-success'
             MESSAGE.innerHTML = json.message
         }).catch(error => {
-            MESSAGE.className = 'error'
+            MESSAGE.className = 'alert alert-danger'
             MESSAGE.innerHTML = error
         })
 }
@@ -102,10 +102,10 @@ function addBeer() {
         .then(json => {
             console.log(json)
             loadTable();
-            MESSAGE.className = 'success'
+            MESSAGE.className = 'alert alert-success'
             MESSAGE.innerHTML = json.message
         }).catch(error => {
-            MESSAGE.className = 'error'
+            MESSAGE.className = 'alert alert-danger'
             MESSAGE.innerHTML = error
         })
 }
