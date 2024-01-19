@@ -123,5 +123,32 @@ function request_options(type, data) {
     return requestOptions;
 }
 
+function searchBeer() {
+    TABLE.innerHTML = '';
+    let forSearch = document.getElementById('search').value;
+    fetch(URL_API)
+        .then(res => res.json())
+        .then(json => {
+            let beers = json.data.beers;
+            console.log(forSearch)
+            beers.forEach(beer => {
+                if (beer.name.include(forSearch)) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                <td>${beer.name}</td>
+                <td>${beer.type}</td>
+                <td>
+                <button class="btn btn-danger mb-2"  onclick="deleteBeer(${beer.id})">Eliminar</button>
+                <button class="btn btn-primary mb-2"  onclick="showBeer(${beer.id})">Ver</button>
+                </td>
+                `;
+                    TABLE.appendChild(row);
+                } else {
+                    console.log('No hay resultados')
+                }
+            })
+        })
+}
+
 
 loadTable()
