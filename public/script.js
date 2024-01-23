@@ -13,6 +13,7 @@ function loadTable() {
     fetch(URL_API)
         .then(res => res.json())
         .then(json => {
+            console.log(json)
             let beers = json.data;
             beers.forEach(beer => {
                 const row = document.createElement('tr');
