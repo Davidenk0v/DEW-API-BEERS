@@ -11,40 +11,46 @@
 </head>
 
 <body class="body">
-    <div class="sticky-top bg-white">
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <h1 class="navbar-brand fs-3">Cervezas</h1>
-            </div>
-        </nav>
+    <header>
+        <div class="sticky-top bg-white">
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid ">
+                    <h1 class="navbar-brand fs-2">Cervezas</h1>
+                    <div class="d-flex" role="search">
+                        <input class="form-control me-2" id="search" type="search" placeholder="Filtrar por el tipo"
+                            aria-label="Search">
+                    </div>
+                </div>
+            </nav>
+            <div id="message"></div>
+    </header>
 
-        <div id="message"></div>
-        <div class="container-fluid">
-            <div class="row g-2">
-                <input type="hidden" id="id">
-                <div class="col-md-6">
-                    <label for="name" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="name">
-                </div>
-                <div class="col-md-6">
-                    <label for="type" class="form-label">Tipo:</label>
-                    <input type="text" class="form-control" id="type">
-                </div>
-                <div class="col-md-2">
-                    <label for="graduacion" class="form-label">Graduación alcoholica:</label>
-                    <input type="text" class="form-control" id="graduacion">
-                </div>
-                <div class="col-12">
-                    <label for="description" class="form-label">Descripción:</label>
-                    <textarea type="text" class="form-control" id="description"></textarea>
-                </div>
-                <div class=" col-12">
-                    <button type="submit" class="btn btn-success m-1" onclick="addBeer()">Añadir</button>
-                    <button type="submit" class="btn btn-warning m-1" onclick="modBeer()">Modificar</button>
-                </div>
-            </div>
+    <div class="container-fluid row g-2 border">
+        <input type="hidden" id="id">
+        <div class="col-md-3">
+            <label for="name" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+        <div class="col-md-3">
+            <label for="type" class="form-label">Tipo:</label>
+            <input type="text" class="form-control" id="type">
+        </div>
+        <div class="col-md-2">
+            <label for="graduacion" class="form-label">Graduación alcoholica:</label>
+            <input type="text" class="form-control" id="graduacion">
+        </div>
+        <div class="col-4">
+            <label for="description" class="form-label">Descripción:</label>
+            <textarea type="text" class="form-control" id="description"></textarea>
+        </div>
+        <div class=" col-8">
+            <button type="submit" class="btn btn-success m-1" onclick="addBeer()">Añadir</button>
+            <button type="submit" class="btn btn-warning m-1" onclick="modBeer()">Modificar</button>
         </div>
     </div>
+    </div>
+
+
     <table class="table table-striped">
         <thead>
             <tr>

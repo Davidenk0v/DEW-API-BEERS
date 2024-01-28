@@ -21,6 +21,26 @@ module.exports = function (app) {
             })
         }
     });
+
+    //Cervezas que contengan el tipo indicado
+    app.get('/api/beers/:type/filter', async (req, res) => {
+        let type = req.params.type ?? '';
+        try {
+            let response = await KNEX.select()
+                .from(TABLE)
+                .where('type', 'like', `%${type}%`);
+            res.json({
+                success: true,
+                message: 'Cervezas encontradas',
+                data: response
+            });
+        } catch (error) {
+            res.json({
+                success: false,
+                message: error
+            })
+        }
+    });
     //Cerveza con el ID indicado
     app.get('/api/beers/:id', async (req, res) => {
         let id = req.params.id;
@@ -48,21 +68,6 @@ module.exports = function (app) {
             })
         }
     });
-
-    app.get('./api/type/all', async (req, res) => {
-        try {
-            let beerForType = await KNEX.select('name').from(TABLE);
-            if (true) {
-                res.json({
-                    success: true,
-                    message: 'Cervezas encontradas',
-                    data: beerForType
-                })
-            }
-        } catch (e) {
-            console.erro(e)
-        }
-    })
 
     //POSTs
     app.post('/api/beers', async (req, res) => {

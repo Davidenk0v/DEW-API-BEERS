@@ -6,28 +6,34 @@ const TYPE_INPUT = document.getElementById('type');
 const ALCOHOL_INPUT = document.getElementById('graduacion');
 const DESCRIPTION = document.getElementById('description');
 const FORM = document.querySelector('form');
+const SEARCH_INPUT = document.getElementById('search');
 
 const MESSAGE = document.getElementById('message');
 function loadTable() {
-    TABLE.innerHTML = '';
     fetch(URL_API)
         .then(res => res.json())
         .then(json => {
             let beers = json.data;
-            beers.forEach(beer => {
-                const row = document.createElement('tr');
-                row.className = 'beer_row';
-                row.innerHTML = `
-            <td name="beer_data">${beer.name}</td>
-            <td>${beer.type}</td>
-            <td>
-            <button class="btn btn-danger mb-2"  onclick="deleteBeer(${beer.id})">Eliminar</button>
-            <button class="btn btn-primary mb-2"  onclick="showBeer(${beer.id})">Ver datos</button>
-            </td>
-            `;
-                TABLE.appendChild(row);
-            })
+            createTable(beers);
         })
+}
+
+function createTable(beers) {
+    TABLE.innerHTML = '';
+    beers.forEach(beer => {
+        const row = document.createElement('tr');
+        row.className = 'beer_row';
+        row.innerHTML = `
+    <td name="beer_data">${beer.name}</td>
+    <td>${beer.type}</td>
+    <td>
+    <button class="btn btn-danger mb-2"  onclick="deleteBeer(${beer.id})">Eliminar</button>
+    <button class="btn btn-primary mb-2"  onclick="showBeer(${beer.id})">Ver datos</button>
+    </td>
+    `;
+        TABLE.appendChild(row);
+    })
+    SEARCH_INPUT.addEventListener('keyup', searchBeer);
 }
 
 function showBeer(id) {
@@ -48,7 +54,6 @@ function deleteBeer(id) {
         method: 'DELETE',
         redirect: 'follow'
     };
-
     fetch(URL_API + id, requestOptions)
         .then(response => response.json())
         .then(result => {
@@ -114,9 +119,6 @@ function addBeer() {
         })
 }
 
-
-
-
 function request_options(type, data) {
     const requestOptions = {
         method: type,
@@ -128,4 +130,15 @@ function request_options(type, data) {
     };
     return requestOptions;
 }
+
+function searchBeer() {
+    let type = SEARCH_INPUT.value;
+    fetch(URL_API + type + '/filter')
+        .then(res => res.json())
+        .then(json => {
+            createTable(json.data)
+        })
+        .catch(error => console.error('error', error));
+}
+
 loadTable()
