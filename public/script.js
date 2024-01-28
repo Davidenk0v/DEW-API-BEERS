@@ -9,6 +9,14 @@ const FORM = document.querySelector('form');
 const SEARCH_INPUT = document.getElementById('search');
 
 const MESSAGE = document.getElementById('message');
+function alertMessage(message, type) {
+    MESSAGE.innerHTML = message;
+    MESSAGE.className = `alert alert-${type}`;
+    setTimeout(() => {
+        MESSAGE.innerHTML = '';
+        MESSAGE.className = '';
+    }, 5000);
+}
 function loadTable() {
     fetch(URL_API)
         .then(res => res.json())
@@ -58,6 +66,7 @@ function showBeer(id) {
         })
 }
 
+
 function deleteBeer(id) {
     var requestOptions = {
         method: 'DELETE',
@@ -67,16 +76,13 @@ function deleteBeer(id) {
         .then(response => response.json())
         .then(result => {
             if (result.success == false) {
-                MESSAGE.className = 'alert alert-danger'
-                MESSAGE.innerHTML = result.message
+                alertMessage(result.message, 'danger')
             } else {
-                MESSAGE.className = 'alert alert-success';
-                MESSAGE.innerHTML = result.message;
+                alertMessage(result.message, 'success')
                 loadTable()
             }
         }).catch(error => {
-            MESSAGE.className = 'alert alert-danger';
-            MESSAGE.innerHTML = error;
+            alertMessage(error, 'danger')
         })
 }
 
@@ -91,12 +97,10 @@ function modBeer() {
         .then(res => res.json())
         .then(json => {
             if (json.success == false) {
-                MESSAGE.className = 'alert alert-danger'
-                MESSAGE.innerHTML = json.message
+                alertMessage(json.message, 'danger')
             } else {
                 loadTable();
-                MESSAGE.className = 'alert alert-success'
-                MESSAGE.innerHTML = json.message
+                alertMessage(json.message, 'success')
             }
         }).catch(error => {
             MESSAGE.className = 'alert alert-danger'
@@ -115,16 +119,13 @@ function addBeer() {
         .then(res => res.json())
         .then(json => {
             if (json.success == false) {
-                MESSAGE.className = 'alert alert-danger'
-                MESSAGE.innerHTML = json.message
+                alertMessage(json.message, 'danger')
             } else {
                 loadTable();
-                MESSAGE.className = 'alert alert-success'
-                MESSAGE.innerHTML = json.message
+                alertMessage(json.message, 'success')
             }
         }).catch(error => {
-            MESSAGE.className = 'alert alert-danger'
-            MESSAGE.innerHTML = error;
+            alertMessage(error, 'danger')
         })
 }
 
