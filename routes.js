@@ -82,9 +82,6 @@ module.exports = function (app) {
                     data: exist
                 })
             } else {
-                let allBeers = await KNEX.select().from(TABLE)
-                //const newId = allBeers.length + 1;
-                //newBeer.id = newId;
                 await KNEX('cervezas').insert({
                     name: newBeer.name,
                     type: newBeer.type,

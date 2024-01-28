@@ -21,6 +21,14 @@ function loadTable() {
 
 function createTable(beers) {
     TABLE.innerHTML = '';
+    if (beers.length == 0) {
+        const row = document.createElement('tr');
+        row.className = 'alert alert-danger';
+        row.innerHTML = `
+    <td colspan="3" name="beer_data">No se han encontrado cervezas</td>
+    `;
+        TABLE.appendChild(row);
+    }
     beers.forEach(beer => {
         const row = document.createElement('tr');
         row.className = 'beer_row';
