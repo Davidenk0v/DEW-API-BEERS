@@ -83,10 +83,9 @@ module.exports = function (app) {
                 })
             } else {
                 let allBeers = await KNEX.select().from(TABLE)
-                const newId = allBeers.length + 1;
-                newBeer.id = newId;
+                //const newId = allBeers.length + 1;
+                //newBeer.id = newId;
                 await KNEX('cervezas').insert({
-                    id: newId,
                     name: newBeer.name,
                     type: newBeer.type,
                     description: newBeer.description,
